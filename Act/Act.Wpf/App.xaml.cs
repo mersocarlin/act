@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Act.Wpf
 {
@@ -13,5 +7,15 @@ namespace Act.Wpf
     /// </summary>
     public partial class App : Application
     {
+        //protected override void OnStartup(StartupEventArgs e)
+        //{
+        //    IUnityContainer container = new UnityContainer();
+        //    container.RegisterType<IActTaskRepository, ActTaskRepository>();
+        //    container.RegisterType<IActTaskService, ActTaskService>();
+        //    MainWindow window = container.Resolve<MainWindow>();
+        //    window.Show();
+        //}
+
+       
     }
 }

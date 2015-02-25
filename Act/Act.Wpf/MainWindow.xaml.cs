@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Act.Domain.Contracts.Services;
+using Act.Domain.Models;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Act.Wpf
 {
@@ -20,9 +9,15 @@ namespace Act.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private IActTaskService _service;
+
+        public MainWindow(IActTaskService service)
         {
             InitializeComponent();
+            this._service = service;
+
+            for (int i = 0; i < 20; i++)
+                _service.SaveActTask(new Domain.Models.ActTask("title " + i, "description " + i));
         }
     }
 }

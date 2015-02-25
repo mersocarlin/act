@@ -1,0 +1,12 @@
+﻿<Window x:Class="Act.Wpf.ActTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ActTask" Height="300" Width="300">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Command="{Binding ClickCommand}" Content="Command"/>
+            <Button Command="{Binding ClickRelayCommand}" Content="RelayCommand"/>
+        </StackPanel>
+    </Grid>
+</Window>
