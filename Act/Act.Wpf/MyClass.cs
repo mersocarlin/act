@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Act.Wpf.Commands;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -33,7 +34,7 @@ namespace Act.Wpf
 
         public void MyAction()
         {
-
+            throw new Exception("test exception");
         }
 
         private bool _canExecute;
@@ -70,51 +71,4 @@ namespace Act.Wpf
         }
     }
 
-    public class RelayCommand : ICommand
-    {
-        #region Fields
-
-        readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
-        //private Func<bool> canExecuteEvaluator;
-
-        #endregion // Fields
-
-        #region Constructors
-
-        public RelayCommand(Action<object> execute)
-            : this(execute, null)
-        {
-        }
-
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-        {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-        #endregion // Constructors
-
-        #region ICommand Members
-
-        public bool CanExecute(object parameter)
-        {
-            return _canExecute == null ? true : _canExecute(parameter);
-        }
-
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
-
-        public void Execute(object parameter)
-        {
-            _execute(parameter);
-        }
-
-        #endregion // ICommand Members
-    }
 }

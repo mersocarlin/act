@@ -19,6 +19,7 @@ namespace Act.Wpf
     /// </summary>
     public partial class ActTask : Window
     {
+
         public ActTask()
         {
             InitializeComponent();
