@@ -6,6 +6,8 @@ namespace Act.Domain.Contracts.Services
 {
     public interface IActTaskService : IDisposable
     {
+        void RestoreDatabase();
+        void SaveDatabase();
         void SaveActTask(ActTask task);
         void DeleteActTask(int id);
         IEnumerable<ActTask> GetActTasks();

@@ -17,6 +17,16 @@ namespace Act.Business.Services
             this._rand = new Random();
         }
 
+        public void RestoreDatabase()
+        {
+            _repository.RestoreDatabase();
+        }
+
+        public void SaveDatabase()
+        {
+            _repository.SaveDatabase();
+        }
+
         public void SaveActTask(ActTask task)
         {
             task.Validate();

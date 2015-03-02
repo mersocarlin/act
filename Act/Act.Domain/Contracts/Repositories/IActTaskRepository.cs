@@ -6,6 +6,8 @@ namespace Act.Domain.Contracts.Repositories
 {
     public interface IActTaskRepository : IDisposable
     {
+        void RestoreDatabase();
+        void SaveDatabase();
         void Insert(ActTask task);
         void Update(ActTask task);
         void Delete(ActTask task);

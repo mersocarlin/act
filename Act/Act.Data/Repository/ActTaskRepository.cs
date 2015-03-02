@@ -14,6 +14,16 @@ namespace Act.Data.Repository
             this.myDatabase = new List<ActTask>();
         }
 
+        public void RestoreDatabase()
+        {
+
+        }
+
+        public void SaveDatabase()
+        {
+
+        }
+
         public void Insert(ActTask task)
         {
             myDatabase.Add(task);

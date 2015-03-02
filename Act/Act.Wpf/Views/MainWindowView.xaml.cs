@@ -2,6 +2,8 @@
 using Act.Wpf.ViewModels;
 using System.Windows;
 using System.Linq;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Act.Wpf.Views
 {
@@ -35,6 +37,19 @@ namespace Act.Wpf.Views
             if (!result.HasValue || !result.Value)
                 return;
             UpdateData();
+        }
+
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            
+            using (StreamWriter sw = new StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "actdb.json"))
+            {
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    serializer.Serialize(writer, _service.GetActTasks());
+                }
+            }
         }
     }
 }
