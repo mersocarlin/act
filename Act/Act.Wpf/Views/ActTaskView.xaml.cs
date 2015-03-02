@@ -28,6 +28,7 @@ namespace Act.Wpf.Views
             {
                 ovTXT_ErrorMessage.Visibility = System.Windows.Visibility.Collapsed;
                 _service.SaveActTask(_viewModel.ToActTask());
+                DialogResult = true;
             }
             catch (Exception ex)
             {

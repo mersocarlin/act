@@ -22,9 +22,9 @@ namespace Act.Domain.Models
         public void Validate()
         {
             if (string.IsNullOrEmpty(this.Title))
-                throw new Exception("Title");
+                throw new Exception("Please fill the Title property");
             if (string.IsNullOrEmpty(this.Description))
-                throw new Exception("Description");
+                throw new Exception("Please fill the Description property");
         }
 
         public override string ToString()

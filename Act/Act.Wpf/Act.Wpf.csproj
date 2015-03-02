@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\ActTaskView.xaml.cs">
       <DependentUpon>ActTaskView.xaml</DependentUpon>
     </Compile>

@@ -22,7 +22,5 @@ namespace Act.Wpf
             MainWindowView window = container.Resolve<MainWindowView>();
             window.Show();
         }
-
-       
     }
 }
