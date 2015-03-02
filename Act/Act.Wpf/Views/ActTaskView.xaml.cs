@@ -16,6 +16,7 @@ namespace Act.Wpf.Views
         public ActTaskView(IActTaskService service)
         {
             InitializeComponent();
+            ovTXT_ErrorMessage.Visibility = System.Windows.Visibility.Collapsed;
             this._service = service;
             _viewModel = new ActTaskViewModel();
             this.DataContext = _viewModel;
@@ -25,12 +26,13 @@ namespace Act.Wpf.Views
         {
             try
             {
+                ovTXT_ErrorMessage.Visibility = System.Windows.Visibility.Collapsed;
                 _service.SaveActTask(_viewModel.ToActTask());
             }
             catch (Exception ex)
             {
-
-                throw;
+                ovTXT_ErrorMessage.Visibility = System.Windows.Visibility.Visible;
+                ovTXT_ErrorMessage.Text = ex.Message;
             }
         }
     }

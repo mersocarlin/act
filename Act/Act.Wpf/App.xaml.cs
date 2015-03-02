@@ -18,8 +18,8 @@ namespace Act.Wpf
             IUnityContainer container = new UnityContainer();
             container.RegisterType<IActTaskRepository, ActTaskRepository>();
             container.RegisterType<IActTaskService, ActTaskService>();
-            //MainWindow window = container.Resolve<MainWindow>();
-            ActTaskView window = container.Resolve<ActTaskView>();
+            //ActTaskView window = container.Resolve<ActTaskView>();
+            MainWindowView window = container.Resolve<MainWindowView>();
             window.Show();
         }
 
